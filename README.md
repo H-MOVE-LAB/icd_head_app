@@ -18,7 +18,7 @@ The provided application is ready-to-run, requiring minimal setup. The process i
 
 Ensure you have the following dependencies installed before running the application:
 
-- **Matlab:** MATLAB R2019a or later.
+- **Matlab:** MATLAB R2022a or later.
 - **Python:** Python 3.11 or later, with the required libraries listed in `requirements.txt`.
 
 ## Usage

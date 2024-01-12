@@ -1,6 +1,6 @@
 # icd_head: Initial Contact Detection for Head Motion Using Temporal Convolutional Networks
 
-Welcome to the icd_head repository! This repository contains a joint Matlab-Python application for the estimation of initial contacts from acceleration and angular velocity data recorded by a Head Inertial Measurement Unit (H-IMU) in real-world conditions. The application utilizes a Temporal Convolutional Network (TCN) for accurate and efficient inference.
+Welcome to the icd_head repository! This repository contains an example of Python application for the estimation of initial contacts from acceleration and angular velocity data recorded by a Head Inertial Measurement Unit (H-IMU). Inference is performed by a Temporal Convolutional Network (TCN) trained with over 100.000 gait cyles in both structured and real-world conditions!
 
 ## Overview
 
@@ -11,7 +11,7 @@ The provided application is ready-to-run, requiring minimal setup. The process i
    - This step prepares the data for input into the Temporal Convolutional Network.
 
 2. **Python Inference:**
-   - After pre-processing, run the Python script to make the network infer initial contacts.
+   - After pre-processing, run the Python script to make the TCN infer initial contacts.
    - The relevant Python script is provided for seamless integration with the processed data.
 
 ## Prerequisites
@@ -19,7 +19,7 @@ The provided application is ready-to-run, requiring minimal setup. The process i
 Ensure you have the following dependencies installed before running the application:
 
 - **Matlab:** MATLAB R2019a or later.
-- **Python:** Python 3.6 or later, with the required libraries listed in `requirements.txt`.
+- **Python:** Python 3.11 or later, with the required libraries listed in `requirements.txt`.
 
 ## Usage
 

@@ -27,6 +27,7 @@ Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/H-MOVE-LAB/icd_head.git
+```
 
 Once cloned, everything is set for you to start and play around!
 
@@ -56,5 +57,5 @@ Feel free to reach out if you have any questions or encounter issues while using
 
 Happy analyzing!
 
-[![H-MOVE-LAB](h-move-lab-logo.png)](https://www.h-move-lab.org)
+[![H-MOVE-LAB](hmovelab_logo.png)](https://github.com/H-MOVE-LAB)
 

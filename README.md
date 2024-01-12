@@ -49,6 +49,17 @@ Example raw data is provided in the `example_data` directory. Use this data to f
 
 This application was developed by the H-MOVE-LAB for human motion analysis. If you find this tool useful, consider citing our work or providing feedback to help us improve.
 
+## Citation
+```bash
+@misc{icd_head_app,
+  author = {Paolo Tasca},
+  title = {Initial Contacts Detection with a Head-Worn IMU through Deep Learning Convolutional Networks},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/philipperemy/keras-tcn}},
+}
+```
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

@@ -1,2 +1,54 @@
-# icd_head_app
-A Python application of a deep learning TCN for gait events detection with a head-worn IMU.
+# icd_head: Initial Contact Detection for Head Motion Using Temporal Convolutional Networks
+
+Welcome to the icd_head repository! This repository contains a joint Matlab-Python application for the estimation of initial contacts from acceleration and angular velocity data recorded by a Head Inertial Measurement Unit (H-IMU) in real-world conditions. The application utilizes a Temporal Convolutional Network (TCN) for accurate and efficient inference.
+
+## Overview
+
+The provided application is ready-to-run, requiring minimal setup. The process involves two main steps:
+
+1. **Matlab Pre-processing:**
+   - Run the `main.m` script in Matlab to perform pre-processing on example raw data.
+   - This step prepares the data for input into the Temporal Convolutional Network.
+
+2. **Python Inference:**
+   - After pre-processing, run the Python script to make the network infer initial contacts.
+   - The relevant Python script is provided for seamless integration with the processed data.
+
+## Prerequisites
+
+Ensure you have the following dependencies installed before running the application:
+
+- **Matlab:** MATLAB R2019a or later.
+- **Python:** Python 3.6 or later, with the required libraries listed in `requirements.txt`.
+
+## Usage
+
+1. **Matlab Pre-processing:**
+   - Navigate to the `matlab_code` directory.
+   - Open the `main.m` script in Matlab.
+   - Run the script to perform pre-processing on the example raw data.
+   
+2. **Python Inference:**
+   - Navigate to the `python_code` directory.
+   - Ensure the pre-processed data is available.
+   - Open the `inference_script.py` script in a Python environment.
+   - Run the script to make the network infer initial contacts.
+
+## Example Data
+
+Example raw data is provided in the `example_data` directory. Use this data to familiarize yourself with the application's workflow and as a reference for running the pre-processing and inference scripts.
+
+## Acknowledgments
+
+This application was developed by the H-MOVE-LAB for human motion analysis. If you find this tool useful, consider citing our work or providing feedback to help us improve.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+Feel free to reach out if you have any questions or encounter issues while using the application.
+
+Happy analyzing!
+
+[![H-MOVE-LAB](h-move-lab-logo.png)](https://www.h-move-lab.org)
+

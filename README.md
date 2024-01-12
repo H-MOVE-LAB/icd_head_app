@@ -1,4 +1,4 @@
-# icd_head_app: Initial Contact Detection for Head Motion Using Temporal Convolutional Networks
+# icd_head_app: Initial Contacts Detection Using Temporal Convolutional Networks and a Head-Worn IMU
 
 Welcome to the icd_head repository! This repository contains an example of Python application for the estimation of initial contacts from acceleration and angular velocity data recorded by a Head Inertial Measurement Unit (H-IMU). Inference is performed by a Temporal Convolutional Network (TCN) trained with over 100.000 gait cyles in both structured and real-world conditions!
 
@@ -53,16 +53,16 @@ This application was developed by the H-MOVE-LAB for human motion analysis. If y
 ```bash
 @misc{icd_head_app,
   author = {Paolo Tasca},
-  title = {Initial Contacts Detection with a Head-Worn IMU through Deep Learning Convolutional Networks},
+  title = {Initial Contacts Detection Using Temporal Convolutional Networks and a Head-Worn IMU},
   year = {2024},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/philipperemy/keras-tcn}},
+  howpublished = {\url{https://github.com/H-MOVE-LAB/icd_head_app}},
 }
 ```
-## License
+<## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).>
 
 Feel free to reach out if you have any questions or encounter issues while using the application.
 

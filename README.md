@@ -1,4 +1,4 @@
-# icd_head: Initial Contact Detection for Head Motion Using Temporal Convolutional Networks
+# icd_head_app: Initial Contact Detection for Head Motion Using Temporal Convolutional Networks
 
 Welcome to the icd_head repository! This repository contains an example of Python application for the estimation of initial contacts from acceleration and angular velocity data recorded by a Head Inertial Measurement Unit (H-IMU). Inference is performed by a Temporal Convolutional Network (TCN) trained with over 100.000 gait cyles in both structured and real-world conditions!
 
@@ -23,16 +23,22 @@ Ensure you have the following dependencies installed before running the applicat
 
 ## Usage
 
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/H-MOVE-LAB/icd_head.git
+
+Once cloned, everything is set for you to start and play around!
+
 1. **Matlab Pre-processing:**
-   - Navigate to the `matlab_code` directory.
-   - Open the `main.m` script in Matlab.
-   - Run the script to perform pre-processing on the example raw data.
+   - Open the `main.m` script in Matlab and set `icd_head_app\` as the current folder.
+   - Run the script to perform pre-processing on the example raw data. This include filtering, scaling and windowing.
+   - Verify that pre-processed data is correctly saved in location `example_data\preprocessed\data.mat`.
    
 2. **Python Inference:**
-   - Navigate to the `python_code` directory.
-   - Ensure the pre-processed data is available.
-   - Open the `inference_script.py` script in a Python environment.
-   - Run the script to make the network infer initial contacts.
+   - Open `icd_head_app\` as a project in your IDE (suggested: PyCharm).
+   - Open the `main.py` script in a Python environment.
+   - Run the script to make inference on the pre-processed data and measure detection performance.
 
 ## Example Data
 

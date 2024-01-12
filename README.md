@@ -60,9 +60,10 @@ This application was developed by the H-MOVE-LAB for human motion analysis. If y
   howpublished = {\url{https://github.com/H-MOVE-LAB/icd_head_app}},
 }
 ```
-<## License
 
-This project is licensed under the [MIT License](LICENSE).>
+<!--## License
+
+This project is licensed under the [MIT License](LICENSE).-->
 
 Feel free to reach out if you have any questions or encounter issues while using the application.
 

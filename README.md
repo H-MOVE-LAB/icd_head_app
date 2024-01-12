@@ -63,7 +63,7 @@ This application was developed by the H-MOVE-LAB for human motion analysis. If y
 ## References
 <a id="1">[1]</a> 
 P. Tasca, F. Salis, S. Rosati, G. Balestra, A. Cereatti,
-A machine learning-based pipeline for stride speed estimation with a head-worn inertial sensor,
+*A machine learning-based pipeline for stride speed estimation with a head-worn inertial sensor*,
 Gait & Posture,
 Volume 105, Supplement 1,
 2023,

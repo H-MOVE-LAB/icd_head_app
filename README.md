@@ -57,5 +57,5 @@ Feel free to reach out if you have any questions or encounter issues while using
 
 Happy analyzing!
 
-[![H-MOVE-LAB](utils_\hmovelab_logo.jpg)](https://github.com/H-MOVE-LAB)
+[![H-MOVE-LAB](utils_/hmovelab_logo.jpg)](https://github.com/H-MOVE-LAB)
 

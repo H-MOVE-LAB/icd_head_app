@@ -69,7 +69,7 @@ Volume 105, Supplement 1,
 2023,
 Pages S47-S48,
 ISSN 0966-6362,
-[paper](https://doi.org/10.1016/j.gaitpost.2023.07.341.)
+[https://doi.org/10.1016/j.gaitpost.2023.07.341.](https://doi.org/10.1016/j.gaitpost.2023.07.341.)
 <!--## License
 
 This project is licensed under the [MIT License](LICENSE).-->

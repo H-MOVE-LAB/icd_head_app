@@ -70,6 +70,9 @@ Volume 105, Supplement 1,
 Pages S47-S48,
 ISSN 0966-6362,
 [https://doi.org/10.1016/j.gaitpost.2023.07.341.](https://doi.org/10.1016/j.gaitpost.2023.07.341.)
+<a id="2">[2]</a>
+Romijnders R, Salis F, Hansen C, Küderle A, Paraschiv-Ionescu A, Cereatti A, Alcock L, Aminian K, Becker C, Bertuletti S, Bonci T, Brown P, Buckley E, Cantu A, Carsin AE, Caruso M, Caulfield B, Chiari L, D'Ascanio I, Del Din S, Eskofier B, Fernstad SJ, Fröhlich MS, Garcia Aymerich J, Gazit E, Hausdorff JM, Hiden H, Hume E, Keogh A, Kirk C, Kluge F, Koch S, Mazzà C, Megaritis D, Micó-Amigo E, Müller A, Palmerini L, Rochester L, Schwickert L, Scott K, Sharrack B, Singleton D, Soltani A, Ullrich M, Vereijken B, Vogiatzis I, Yarnall A, Schmidt G, Maetzler W. *Ecological validity of a deep learning algorithm to detect gait events from real-life walking bouts in mobility-limiting diseases*. Front Neurol. 2023 Oct 16;14:1247532. 
+[doi: 10.3389/fneur.2023.1247532. ](doi: 10.3389/fneur.2023.1247532. )
 <!--## License
 
 This project is licensed under the [MIT License](LICENSE).-->

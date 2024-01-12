@@ -26,7 +26,7 @@ Ensure you have the following dependencies installed before running the applicat
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/H-MOVE-LAB/icd_head.git
+git clone https://github.com/H-MOVE-LAB/icd_head_app.git
 ```
 
 Once cloned, everything is set for you to start and play around!

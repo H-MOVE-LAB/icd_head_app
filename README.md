@@ -12,7 +12,7 @@ Volume 105, Supplement 1,
 Pages S47-S48,
 ISSN 0966-6362,
 [https://doi.org/10.1016/j.gaitpost.2023.07.341.](https://doi.org/10.1016/j.gaitpost.2023.07.341.) <br>
-<a id="1">[1]</a> 
+<a id="2">[2]</a> 
 P. Tasca,
 *A machine learning approach to spatio-temporal gait analysis based on a head-mounted inertial sensor*,
 Supervisors: Andrea Cereatti, Gabriella Balestra, Samanta Rosati, Francesca Salis. Politecnico di Torino, 2022

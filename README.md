@@ -45,7 +45,7 @@ git clone https://github.com/H-MOVE-LAB/icd_head_app.git
 Once cloned, everything is set for you to start and play around!
 
 1. **Matlab Pre-processing:**
-   - Open the `main.m` script in Matlab and set `icd_head_app\` as the current folder.
+   - Open the `preprocessing.m` script in Matlab. Be sure that `icd_head_app\` is the current folder.
    - Run the script to perform pre-processing on the example raw data. This include filtering, scaling and windowing.
    - Verify that pre-processed data is correctly saved in location `example_data\preprocessed\data.mat`.
    

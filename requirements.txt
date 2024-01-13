@@ -1,0 +1,13 @@
+# requirements.txt
+
+# Matlab version requirement
+matlab==2022a
+
+# Python version requirement
+python==3.11
+
+# TensorFlow version requirement
+tensorflow==2.15
+
+# Keras (bundled with TensorFlow, but included for clarity)
+keras==2.8.0

@@ -16,7 +16,7 @@ from utils_.functions_ import *
 # get current directory
 subj_dir = '0002'
 # load the model
-model = keras.models.load_model('MyModel6',compile= False)
+model = keras.models.load_model('MyTCN',compile= False)
 # load data
 processed_data_path = os.path.join('example_data','preprocessed','data.mat')
 original_data_path = os.path.join('example_data','original',subj_dir,'Mobility Test','Results','data.mat')

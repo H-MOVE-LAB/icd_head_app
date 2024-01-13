@@ -20,7 +20,7 @@ R. Romijnders, F. Salis, C. Hansen, A. Küderle, A. Paraschiv-Ionescu, A. Cereat
 The provided application is ready-to-run, requiring minimal setup. The process involves two main steps:
 
 1. **Matlab Pre-processing:**
-   - Run the `main.m` script in Matlab to perform pre-processing on example raw data.
+   - Run the `preprocessing.m` script in Matlab to perform pre-processing on example raw data.
    - This step prepares the data for input into the Temporal Convolutional Network.
 
 2. **Python Inference:**

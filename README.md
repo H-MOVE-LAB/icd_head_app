@@ -11,12 +11,12 @@ Volume 105, Supplement 1,
 2023,
 Pages S47-S48,
 ISSN 0966-6362,
-[https://doi.org/10.1016/j.gaitpost.2023.07.341.](https://doi.org/10.1016/j.gaitpost.2023.07.341.) <br>
+[https://doi.org/10.1016/j.gaitpost.2023.07.341.](https://doi.org/10.1016/j.gaitpost.2023.07.341.) <br><br>
 <a id="2">[2]</a> 
 P. Tasca,
 *A machine learning approach to spatio-temporal gait analysis based on a head-mounted inertial sensor*,
 Supervisors: Andrea Cereatti, Gabriella Balestra, Samanta Rosati, Francesca Salis. Politecnico di Torino, 2022
-[https://webthesis.biblio.polito.it/25348/](https://webthesis.biblio.polito.it/25348/) <br>
+[https://webthesis.biblio.polito.it/25348/](https://webthesis.biblio.polito.it/25348/) <br><br>
 <a id="3">[3]</a>
 R. Romijnders, F. Salis, C. Hansen, A. Küderle, A. Paraschiv-Ionescu, A. Cereatti, W. Maetzler *et al.*, *Ecological validity of a deep learning algorithm to detect gait events from real-life walking bouts in mobility-limiting diseases*, Frontiers in Neurology, 2023, [10.3389/fneur.2023.1247532. ](10.3389/fneur.2023.1247532. )
 

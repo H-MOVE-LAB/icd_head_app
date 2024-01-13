@@ -2,6 +2,19 @@
 
 Welcome to the icd_head repository! This repository contains an example of Python application for the estimation of initial contacts from acceleration and angular velocity data recorded by a Head Inertial Measurement Unit (H-IMU). Inference is performed by a Temporal Convolutional Network (TCN) trained with over 100.000 gait cyles in both structured and real-world conditions!
 
+## References
+<a id="1">[1]</a> 
+P. Tasca, F. Salis, S. Rosati, G. Balestra, A. Cereatti,
+*A machine learning-based pipeline for stride speed estimation with a head-worn inertial sensor*,
+Gait & Posture,
+Volume 105, Supplement 1,
+2023,
+Pages S47-S48,
+ISSN 0966-6362,
+[https://doi.org/10.1016/j.gaitpost.2023.07.341.](https://doi.org/10.1016/j.gaitpost.2023.07.341.) <br>
+<a id="2">[2]</a>
+R. Romijnders, F. Salis, C. Hansen, A. Küderle, A. Paraschiv-Ionescu, A. Cereatti, W. Maetzler *et al.*, *Ecological validity of a deep learning algorithm to detect gait events from real-life walking bouts in mobility-limiting diseases*, Frontiers in Neurology, 2023, [10.3389/fneur.2023.1247532. ](10.3389/fneur.2023.1247532. )
+
 ## Overview
 
 The provided application is ready-to-run, requiring minimal setup. The process involves two main steps:
@@ -60,18 +73,6 @@ This application was developed by the H-MOVE-LAB for human motion analysis. If y
   howpublished = {\url{https://github.com/H-MOVE-LAB/icd_head_app}},
 }
 ```
-## References
-<a id="1">[1]</a> 
-P. Tasca, F. Salis, S. Rosati, G. Balestra, A. Cereatti,
-*A machine learning-based pipeline for stride speed estimation with a head-worn inertial sensor*,
-Gait & Posture,
-Volume 105, Supplement 1,
-2023,
-Pages S47-S48,
-ISSN 0966-6362,
-[https://doi.org/10.1016/j.gaitpost.2023.07.341.](https://doi.org/10.1016/j.gaitpost.2023.07.341.) <br>
-<a id="2">[2]</a>
-R. Romijnders, F. Salis, C. Hansen, A. Küderle, A. Paraschiv-Ionescu, A. Cereatti, W. Maetzler *et al.*, *Ecological validity of a deep learning algorithm to detect gait events from real-life walking bouts in mobility-limiting diseases*, Frontiers in Neurology, 2023, [10.3389/fneur.2023.1247532. ](10.3389/fneur.2023.1247532. )
 <!--## License
 
 This project is licensed under the [MIT License](LICENSE).-->

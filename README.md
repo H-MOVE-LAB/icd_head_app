@@ -53,6 +53,7 @@ Once cloned, everything is set for you to start and play around!
    - Open `icd_head_app\` as a project in your IDE (suggested: PyCharm).
    - Open the `main.py` script in a Python environment.
    - Run the script to make inference on the pre-processed data and measure detection performance.
+![ICs detection results on a trial of indoor walking.](utils_/detected_ics.png "ICs detection results on a trial of indoor walking.")
 
 ## Example Data
 

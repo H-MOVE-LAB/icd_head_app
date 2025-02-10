@@ -1,10 +1,13 @@
 # requirements.txt
 
-# Matlab version requirement
-matlab==2022a
+# Scipy version requirement
+scipy>1.13
 
-# Python version requirement
-python==3.11
+# Numpy version requirement
+numpy>2.2
+
+# TensorFlow version requirement
+matplotlib>3.9
 
 # TensorFlow version requirement
 tensorflow==2.15

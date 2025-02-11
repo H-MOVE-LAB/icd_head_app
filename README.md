@@ -78,7 +78,7 @@ Now, everything is set for you to start and play around!
 
 ## Example Data
 
-Example raw data is provided in the `example_data` directory. Use this data to familiarize yourself with the application's workflow and as a reference for running the pre-processing and inference scripts.
+Example raw data is provided in the `example_data` directory. Use this data to familiarize yourself with the application's workflow and as a reference for running the pre-processing and inference scripts. The full dataset (<iframe width="100%" height="600" src="https://ieee-dataport.org/documents/towalk/embed" frameborder="0" class="embed-textarea" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>) is available on IEEE DataPort.
 
 ## Acknowledgments
 

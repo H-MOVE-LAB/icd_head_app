@@ -1,5 +1,4 @@
 function featuresTable = build_data_for_gait_speed_estimator(results)
-fs = 100; % sampling frequency (Hz)
 featuresArray = []; % initialize features array
 
 % Iterate through the structure 'results', which contains Test4-7, each with Trial1-3
@@ -18,17 +17,16 @@ for testIdx = 4:7  % Test4-7
 
         % Segment the raw data using the predicted ICs
         fprintf('Standardized gait. Test %d, Trial %d \n',testIdx,trialIdx);
-        ICs = {results.(['Test',num2str(testIdx)]).(['Trial',num2str(trialIdx)]).Standards.INDIP.MicroWB.InitialContact_Event}';
+        ICs = {results.(['Test',num2str(testIdx)]).(['Trial',num2str(trialIdx)]).Standards.INDIP.MicroWB.Predicted_Initial_Contact_Events}';
         ICs = vertcat(ICs{:});
         ICs = [ICs(1:end-2), ICs(3:end)]; 
         % target stride speeds
         WS = {results.(['Test',num2str(testIdx)]).(['Trial',num2str(trialIdx)]).Standards.INDIP.MicroWB.Stride_Speed}';
         WS = [WS{:}];
         fprintf('Number of strides: %d\n',length(WS));
-        for jj=1:length(WS)
-            fprintf('Stride %d\n',jj);
-            if ~isnan(WS(jj)) % ignore "false" strides
-                s = fix(fs*ICs(jj,1)); e = fix(fs*ICs(jj,2));
+        for jj=1:size(ICs, 1)
+            if ~isnan(WS(jj)) && all(~isnan(ICs(jj,:))) % ignore strides with undetected ICs 
+                s = ICs(jj,1); e = ICs(jj,2);
                 [filteredStrideNorms,filteredStrideSignals] = segment_acc_stride(predictors,s,e);
                 features = calcSelectedFeatures(filteredStrideNorms,filteredStrideSignals);
                 featuresArray = [featuresArray;features,WS(jj)];
@@ -41,6 +39,6 @@ end
 feature_names = {'Min', 'Range', 'Abs_step_amp', 'Rel_step_amp', 'AbsSum', 'SqrSum', 'Variance', 'Stride_dur', 'Mean_vel_y', 'Gait_speed'};
 
 % Create a table for the selected features
-featuresTable = table(featuresArray, 'VariableNames', feature_names);
+featuresTable = array2table(featuresArray, 'VariableNames', feature_names);
 
-end
+end 

@@ -278,7 +278,7 @@ def modelEvaluate(model, x: np.ndarray, t: np.ndarray):
         ipksGS_ = np.argwhere(targetLabel==1)[:,0]
         # return arrays of pointers and array of time differences for the current window
         targets_2_predictions, predictions_2_targets, time_diff = compare_events(ipksGS_, ipksDUT_, thr=20)
-        # return number of missed events, extra events, array of time differences and time steps of predicted ICs (missed events are set to -999)
+        # return number of missed events, extra events, and time steps of predicted ICs (missed events are set to -999)
         missed, extra, ipksDUT_ = MetricsGaitEvents(ipksGS_,ipksDUT_,targets_2_predictions,predictions_2_targets)
         # update number of target events in the mWB
         GSevents = GSevents + len(ipksGS_)

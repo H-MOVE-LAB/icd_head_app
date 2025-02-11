@@ -11,6 +11,7 @@
 import os
 import tf_keras as k3
 from utils_.functions_ import *
+from scipy.io import savemat
 # %% DATA LOADING
 # get current directory
 subj_dir = '0002'
@@ -59,5 +60,7 @@ for iTest in list(dataset["TimeMeasure1"].keys()): # e.g. 'Test3'
 plot_first_mwb(dataset)
 
 # %% Export dataset as .mat file (Uncomment to save)
-# save_path = os.path.join('outputs',subj_dir)
-# savemat(save_path, dataset, long_field_names = True, oned_as='column')
+save_path = os.path.join('TCN_outputs', subj_dir)
+os.makedirs(save_path, exist_ok=True)
+file_name = os.path.join(save_path, 'results.mat')
+savemat(file_name, dataset, long_field_names = True, oned_as='column')

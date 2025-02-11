@@ -17,14 +17,14 @@ else
 end
 disp('Trained GPR model successfully loaded.');
 
-% 4. Extract input features (X) and target gait speed (Y)
-X = table2array(dataForEstimator(:, 1:end-1)); % All columns except the last one (input features)
+%% Extract input features (X) and target gait speed (Y)
+X = dataForEstimator(:, 1:end-1); % All columns except the last one (input features)
 Y_true = dataForEstimator{:, end}; % Last column as ground truth (gait speed)
 
-% 5. Predict gait speed using the trained GPR model
-Y_pred = predict(trainedGPRModel, X);
+%% Predict gait speed using the trained GPR model
+Y_pred = predict(GPRModel, X);
 
-% 6. Evaluate model performance
+%% Evaluate model performance
 rmse = sqrt(mean((Y_pred - Y_true).^2)); % Root Mean Squared Error
 fprintf('Root Mean Squared Error (RMSE): %.4f m/s\n', rmse);
 

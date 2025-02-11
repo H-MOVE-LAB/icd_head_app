@@ -1,76 +1,112 @@
-function data_new = label_data(data,winSize,overlap)
-% LABEL_DATA Function to partition micro-walking bouts into equal-length
-% windows of length "winSize" and with overlap "overlap" and label them.
-% Initial contacts are labeled as 1s, other data points are labeled as 0s.
-% -------------------------------------------------------------------------
-% Author: Paolo Tasca (Politecnico di Torino, paolo.tasca@polito.it)
-% Version history:
-%   v1:                 Mar 12th 2023
-%   v2:                 Jan 12th 2024
-% -------------------------------------------------------------------------
+function labeledData = label_data(data, winSize, overlap)
+% LABEL_DATA Partitions micro-walking bouts into fixed-size windows and labels initial contacts.
+%
+% Description:
+%   This function segments micro-walking bouts (mWB) into equal-length 
+%   windows with a given overlap, labeling initial contacts (ICs) as 1s 
+%   and all other data points as 0s. The resulting labeled dataset is 
+%   appended to the INDIP data structure.
+%
+% Author:
+%   Dr. Paolo Tasca, Politecnico di Torino
+%   Email: paolo.tasca@polito.it
+%
+% Version History:
+%   v1.0 - Mar 12, 2023 - Initial version
+%   v2.0 - Jan 12, 2024 - Improved documentation, readability, and variable naming
+%
 % Inputs:
-%   data:               INDIP data (type: 1x1 struct)
-%   winSize:            size of windows (type: double). Ex. winSize = 200.
-%   overlap:            number of overlapped samples (type: double). Ex. overlap = 100.
+%   data (struct)       - INDIP dataset containing gait measurement data.
+%   winSize (double)    - Window size for segmentation (e.g., 200 samples).
+%   overlap (double)    - Overlap size between windows (e.g., 100 samples).
+%
 % Outputs:
-%   data_new:           INDIP data with labeled windows (type: 1x1 struct).
+%   labeledData (struct) - INDIP dataset with labeled micro-walking bout windows.
+%
 % -------------------------------------------------------------------------
-% sampling frequency (Hz)
-fs = 100; 
-first_test = 4; % Ignore Test1 (Static), Test2 (Standing) and Test3 (Data Personalization)
-% Returning cell array with the names of each test
-struct_test_names = fieldnames(data.TimeMeasure1); % Test names. es. 'Test4'
-for nTest = first_test:numel(struct_test_names)
-    % Returning cell array with the names of each trial
-    struct_trial_names = fieldnames(data.TimeMeasure1.(struct_test_names{nTest})); % Trial names. es. 'Trial1'
-    for nTrial = 1:numel(struct_trial_names)
-        num_mWB = size(data.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB,2);
-        % Extract raw and processed predictors
-        x_processed = data.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).SU_INDIP.Head.pred_processed;
-        x_raw = [...
-            data.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).SU_INDIP.Head.Acc,... % raw accelerations
-            data.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).SU_INDIP.Head.Gyr];   % raw angular rates
-        % Loop for each micro-walking bout (mWB)
-        for mWBi=1:num_mWB
-            % Target ICs for the mWBi-th micro-walking bout
-            ICs = data.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)])...
-                .Standards.INDIP.MicroWB(mWBi).InitialContact_Event;
-            ICs = fix(fs*ICs); % seconds --> samples
-            % Segment mWB
-            % Start of mWB
-            s = fix(fs*data.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).Start);
-            % End of mWB
-            e = fix(fs*data.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).End);
-            % Remove nan events and shift with respect to the start of mWB
-            indices = round(rmmissing(ICs))-s+1;
-            % Create binary label signal from target ICs for current mWB
-            targetMicroWB = zeros(1,fix(e-s+1)); % initialize vector of 0s with length equal to mWB
-            targetMicroWB(indices) = 1; % set ICs to 1
-            % Create buffer of processed and raw data
-            predMicroWB_p = x_processed(s:e,:); predMicroWB_r = x_raw(s:e,:);
-            microWB_p = [predMicroWB_p,targetMicroWB']; microWB_r = [predMicroWB_r,targetMicroWB'];
-            microWBbuffered_p = divide_into_windows(microWB_p,winSize,overlap);
-            microWBbuffered_r = divide_into_windows(microWB_r,winSize,overlap);
-            % append to INDIP data structure
-            data_new.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).dataset_p = microWBbuffered_p;
-            data_new.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).dataset_r = microWBbuffered_r;
-            % append relevant fields
-            % Stride speed
-            data_new.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).Stride_Speed = ...
-                data.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).Stride_Speed;
-            % Start
-            data_new.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).Start = ...
-                data.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).Start;
-            % End
-            data_new.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).End = ...
-                data.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).End;
-            % Initial Contacts
-            data_new.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).InitialContact_Event = ...
-                data.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).InitialContact_Event;
-            % Number of strides
-            data_new.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).NumberStrides = ...
-                data.TimeMeasure1.(['Test',num2str(nTest)]).(['Trial',num2str(nTrial)]).Standards.INDIP.MicroWB(mWBi).NumberStrides;
+
+%% Define Parameters
+samplingFreq = 100;  % Sampling frequency in Hz
+firstTestIdx = 4;    % Ignore Test1 (Static), Test2 (Standing), Test3 (Personalization)
+
+% Extract test names from data structure
+testNames = fieldnames(data.TimeMeasure1); 
+
+%% Iterate Over Tests
+for testIdx = firstTestIdx:numel(testNames)
+    % Extract trial names for the current test
+    trialNames = fieldnames(data.TimeMeasure1.(testNames{testIdx}));
+    
+    % Iterate over all trials in the test
+    for trialIdx = 1:numel(trialNames)
+        % Get number of micro-walking bouts (mWB) in the current trial
+        numMicroWB = numel(data.TimeMeasure1.(sprintf('Test%d', testIdx))...
+                                  .(sprintf('Trial%d', trialIdx)).Standards.INDIP.MicroWB);
+
+        % Extract processed and raw head motion data
+        processedData = data.TimeMeasure1.(sprintf('Test%d', testIdx))...
+                                      .(sprintf('Trial%d', trialIdx)).SU_INDIP.Head.pred_processed;
+        rawData = [data.TimeMeasure1.(sprintf('Test%d', testIdx))...
+                                      .(sprintf('Trial%d', trialIdx)).SU_INDIP.Head.Acc, ...
+                   data.TimeMeasure1.(sprintf('Test%d', testIdx))...
+                                      .(sprintf('Trial%d', trialIdx)).SU_INDIP.Head.Gyr];
+
+        %% Iterate Over Micro-Walking Bouts
+        for microWBIdx = 1:numMicroWB
+            % Extract initial contact (IC) event times (in seconds) and convert to samples
+            ICs = fix(samplingFreq * data.TimeMeasure1.(sprintf('Test%d', testIdx))...
+                                               .(sprintf('Trial%d', trialIdx))...
+                                               .Standards.INDIP.MicroWB(microWBIdx).InitialContact_Event);
+            ICs = round(rmmissing(ICs));  % Remove NaN events
+
+            % Get start and end indices for current micro-walking bout (mWB)
+            startIdx = fix(samplingFreq * data.TimeMeasure1.(sprintf('Test%d', testIdx))...
+                                                      .(sprintf('Trial%d', trialIdx))...
+                                                      .Standards.INDIP.MicroWB(microWBIdx).Start);
+            endIdx = fix(samplingFreq * data.TimeMeasure1.(sprintf('Test%d', testIdx))...
+                                                    .(sprintf('Trial%d', trialIdx))...
+                                                    .Standards.INDIP.MicroWB(microWBIdx).End);
+
+            % Shift IC indices relative to the start of the bout
+            ICs = ICs - startIdx + 1;
+
+            % Create binary label signal for IC events
+            labelVector = zeros(1, fix(endIdx - startIdx + 1));
+            labelVector(ICs) = 1; 
+
+            % Extract segment of processed and raw data for the current mWB
+            segmentProcessed = processedData(startIdx:endIdx, :);
+            segmentRaw = rawData(startIdx:endIdx, :);
+
+            % Concatenate data with label vector
+            labeledProcessed = [segmentProcessed, labelVector'];
+            labeledRaw = [segmentRaw, labelVector'];
+
+            % Apply windowing
+            bufferedProcessed = divide_into_windows(labeledProcessed, winSize, overlap);
+            bufferedRaw = divide_into_windows(labeledRaw, winSize, overlap);
+
+            %% Store Processed Data in Structured Format
+            labeledData.TimeMeasure1.(sprintf('Test%d', testIdx))...
+                                      .(sprintf('Trial%d', trialIdx))...
+                                      .Standards.INDIP.MicroWB(microWBIdx).dataset_p = bufferedProcessed;
+            labeledData.TimeMeasure1.(sprintf('Test%d', testIdx))...
+                                      .(sprintf('Trial%d', trialIdx))...
+                                      .Standards.INDIP.MicroWB(microWBIdx).dataset_r = bufferedRaw;
+
+            % Copy relevant metadata from original data
+            fieldsToCopy = {'Stride_Speed', 'Start', 'End', 'InitialContact_Event', 'NumberStrides'};
+            for fieldIdx = 1:numel(fieldsToCopy)
+                field = fieldsToCopy{fieldIdx};
+                labeledData.TimeMeasure1.(sprintf('Test%d', testIdx))...
+                                          .(sprintf('Trial%d', trialIdx))...
+                                          .Standards.INDIP.MicroWB(microWBIdx).(field) = ...
+                    data.TimeMeasure1.(sprintf('Test%d', testIdx))...
+                                       .(sprintf('Trial%d', trialIdx))...
+                                       .Standards.INDIP.MicroWB(microWBIdx).(field);
+            end
         end
     end
 end
+
 end

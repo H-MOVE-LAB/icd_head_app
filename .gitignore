@@ -1,5 +1,5 @@
 # Ignore virtual environment
-venv_icd_head/  # If your virtual environment has a custom name
+venv_icd_head/
 
 # Ignore virtual environments created with conda
 .conda/

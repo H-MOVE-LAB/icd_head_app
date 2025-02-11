@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 (icd_head_app)" project-jdk-type="Python SDK" />
+  <component name="Black">
+    <option name="sdkName" value="Python 3.12 virtualenv at C:\Users\paolo\OneDrive - Politecnico di Torino (2)\PHD\Progetti\Attivita interne\H-Move Lab organization\icd_head_app\venv_icd_head" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 virtualenv at C:\Users\paolo\OneDrive - Politecnico di Torino (2)\PHD\Progetti\Attivita interne\H-Move Lab organization\icd_head_app\venv_icd_head" project-jdk-type="Python SDK" />
 </project>

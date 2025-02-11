@@ -86,6 +86,7 @@ def buildDataSet(DS: np.ndarray):
     return x_val, y_val
 
 # %% Inference and performance metrics
+# Adapted from [my-gait-events-tcn](https://github.com/rmndrs89/my-gait-events-tcn.git)
 def compare_events(annotated: np.ndarray, predicted: np.ndarray, thr: float =50):
     """
     Compares the timings of the annotated (true) events and the predicted events.
@@ -206,7 +207,7 @@ def MetricsGaitEvents(ipksGS_: np.ndarray,ipksDUT_: np.ndarray,targets_2_predict
     predicted_aligned[matched_events] = ipksDUT_[predictions_2_targets != -999]
 
     return missed, extra, predicted_aligned
-def modelEvaluate(model: keras.src.engine.functional.Functional, x: np.ndarray, t: np.ndarray):
+def modelEvaluate(model, x: np.ndarray, t: np.ndarray):
     """
     This function evaluates the performance of a generic model on
     the validation data. The function returns the percentage of extra
@@ -231,7 +232,7 @@ def modelEvaluate(model: keras.src.engine.functional.Functional, x: np.ndarray, 
     missedEvents = 0
     extraEvents = 0
     GSevents = 0
-    Differenze = []
+    Differences = []
     ipksDUT = []
     ipksGS = []
     fs = 100 # sampling frequency (Hz)
@@ -285,12 +286,12 @@ def modelEvaluate(model: keras.src.engine.functional.Functional, x: np.ndarray, 
         missedEvents = missedEvents + missed
         extraEvents = extraEvents + extra
         # update array of time differecnes of the mWB
-        Differenze = np.concatenate([Differenze,time_diff])
+        Differences = np.concatenate([Differences,time_diff])
         # linearize target and predicted events
         # convert to float (required for nan conversion)
         ipksDUT_ = ipksDUT_.astype('float')
         # convert missed events to nan
-        ipksDUT_[ipksDUT_==-999] = np.NAN
+        ipksDUT_[ipksDUT_==-999] = np.nan
         # shift ICs in time with respect to the first sample of the current micro walking bout
         ipksGS_ = s + ipksGS_ + 1 # +1 addend is to shift from Python indexing to Matlab indexing
         ipksDUT_ = s + ipksDUT_ + 1

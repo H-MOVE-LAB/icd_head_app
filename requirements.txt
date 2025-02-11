@@ -1,16 +1,17 @@
 # requirements.txt
 
 # Scipy version requirement
-scipy>1.13
+scipy==1.15.1
 
 # Numpy version requirement
-numpy>2.2
+numpy==2.0.2
 
-# TensorFlow version requirement
-matplotlib>3.9
+# Matplotlib version requirement
+matplotlib==3.10.0
 
-# TensorFlow version requirement
-tensorflow==2.15
-
-# Keras (bundled with TensorFlow, but included for clarity)
-keras==2.8.0
+# TensorFlow and Keras version requirement
+tensorflow==2.18.0
+tensorflow-cpu==2.18.0
+tensorflow_intel==2.18.0
+keras==3.8.0
+tf_keras==2.18.0

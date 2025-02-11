@@ -4,7 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv_icd_head" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.13 (icd_head_app)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.12 virtualenv at C:\Users\paolo\OneDrive - Politecnico di Torino (2)\PHD\Progetti\Attivita interne\H-Move Lab organization\icd_head_app\venv_icd_head" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

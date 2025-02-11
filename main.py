@@ -9,14 +9,13 @@
                                                                                
 # %% IMPORT PACKAGES
 import os
-from scipy.io import savemat
-import keras
+import tf_keras as k3
 from utils_.functions_ import *
 # %% DATA LOADING
 # get current directory
 subj_dir = '0002'
 # load the model
-model = keras.models.load_model('MyModel6',compile= False)
+model = k3.models.load_model('Trained initial contacts model',compile= False)
 # load data
 processed_data_path = os.path.join('example_data','preprocessed','data.mat')
 original_data_path = os.path.join('example_data','original',subj_dir,'Mobility Test','Results','data.mat')

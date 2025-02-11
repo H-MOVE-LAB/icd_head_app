@@ -49,17 +49,11 @@ Clone the repository to your local machine :
 git clone https://github.com/H-MOVE-LAB/icd_head_app.git
 ```
 
-Then, set the `venv_icd_head` folder as the virtual environment for the project : 
+Then, create a virtual environment with the required modules : 
 
 ```bash
-python3 -m venv venv_icd_head
-venv_icd_head\Scripts\activate
-
-```
-
-And install the required packages :
-
-```bash
+python -m venv venv_icd_head
+venv_icd_head\Scripts\activate     
 pip install -r requirements.txt
 ```
 

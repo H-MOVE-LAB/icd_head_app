@@ -2,6 +2,8 @@
 
 Welcome to the `icd_head_app` repository! This repository contains a basic example of a Python application for the estimation of initial contacts from acceleration and angular velocity data recorded by a Head Inertial Measurement Unit (H-IMU). Raw data is preprocessed in Matlab, while inference is performed in Python by a Temporal Convolutional Network (TCN) trained with over 100.000 gait cyles in both structured and real-world conditions!
 
+This project is based on [my-gait-events-tcn](https://github.com/rmndrs89/my-gait-events-tcn.git). The code for training (not included in the current project) and evaluating the model was adapted from the referenced repository.
+
 ## References
 <a id="1">[1]</a> 
 P. Tasca, F. Salis, S. Rosati, G. Balestra, A. Cereatti,
@@ -37,17 +39,31 @@ The provided application is ready-to-run, requiring minimal setup. The process i
 Ensure you have the following dependencies installed before running the application:
 
 - **Matlab:** MATLAB R2022a or later.
-- **Python:** Python 3.11 or later, with the required libraries listed in `requirements.txt`.
+- **Python:** Python 3.12, with the required libraries listed in `requirements.txt`.
 
-## Usage
+## Usage (Windows)
 
-Clone the repository to your local machine:
+Clone the repository to your local machine :
 
 ```bash
 git clone https://github.com/H-MOVE-LAB/icd_head_app.git
 ```
 
-Once cloned, everything is set for you to start and play around!
+Then, set the `venv_icd_head` folder as the virtual environment for the project : 
+
+```bash
+python3 -m venv venv_icd_head
+venv_icd_head\Scripts\activate
+
+```
+
+And install the required packages :
+
+```bash
+pip install -r requirements.txt
+```
+
+Now, everything is set for you to start and play around!
 
 1. **Matlab Pre-processing:**
    - Open the `preprocessing.m` script in Matlab. Be sure that `icd_head_app\` is the current folder.

@@ -58,21 +58,21 @@ Ensure you have the following dependencies installed before running the applicat
 Clone the repository to your local machine :
 
 ```bash
-git clone https://github.com/H-MOVE-LAB/icd_head_app.git
+git clone https://github.com/H-MOVE-LAB/headgait.git
 ```
 
-Then, create a virtual environment with the required modules : 
+Then, create a virtual environment with the required modules (example: `venv_headgait`) : 
 
 ```bash
-python -m venv venv_icd_head
-venv_icd_head\Scripts\activate     
+python -m venv venv_headgait
+venv_headgait\Scripts\activate     
 pip install -r requirements.txt
 ```
 
 Now, everything is set for you to start and play around!
 
 1. **Matlab Pre-processing:**
-   - Open the `preprocessing.m` script in Matlab. Be sure that `icd_head_app\` is the current folder.
+   - Open the `preprocessing.m` script in Matlab. Be sure that `headgait\` is the current folder.
    - Run the script to perform pre-processing on the example raw data. This include filtering, scaling and windowing.
    - Verify that pre-processed data is correctly saved in location `example_data\preprocessed\data.mat`.
    

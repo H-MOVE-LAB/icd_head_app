@@ -1,7 +1,0 @@
-# Ignore virtual environment
-venv_icd_head/
-
-# Ignore virtual environments created with conda
-.conda/
-.env/
- 

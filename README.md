@@ -1,6 +1,7 @@
 # `HeadGait` - Deep and Machine Learning Models for Initial Contacts Detection and Gait Speed Estimation with a Head-Worn Inertial Measurement Unit
+![TOWalk illustration](utils_/README_figures/TOWalk_illustration.png "TOWalk illustration")
 
-Welcome to the `HeadGait` repository! This repository contains a basic example of a Matlab-Python application for the detection of initial contacts and the estimation of gait speed from acceleration and angular velocity data recorded by a Head-worn Inertial Measurement Unit (H-IMU). Raw data is preprocessed in Matlab, then initial contacts are detected by a Temporal Convolutional Network (TCN) trained with over 100.000 gait cyles in both structured and real-world conditions. Finally, gait speed is inferred by a Gaussian Process Regression (GPR) model fed with nine time-domain features extracted from the previously segmented gait cycles. 
+Welcome to the `HeadGait` repository! This repository contains a basic example of a Matlab-Python application for the detection of initial contacts and the estimation of gait speed from acceleration and angular velocity data recorded by a Head-worn Inertial Measurement Unit (H-IMU). Raw data is preprocessed in Matlab, then initial contacts are detected by a Temporal Convolutional Network (TCN) trained with over 100.000 gait cyles in both structured and real-world conditions. Finally, gait speed is inferred by a trained Gaussian Process Regression (GPR) model fed with nine time-domain features extracted from the previously segmented gait cycles. 
 
 The study design and the procedures for data collection, model training, optimization and evaluation are described in <a href="#1">[1]</a>
 
@@ -64,12 +65,12 @@ Now, everything is set for you to start and play around!
    - Open `headgait\` as a project in your IDE (suggested: PyCharm).
    - Open the `example_initial_contacts_detection.py` script in a Python environment.
    - Run the script to make inference on the pre-processed data and measure detection performance.
-![ICs detection results on a trial of indoor walking.](utils_/detected_ics.png "ICs detection results on a trial of indoor walking.")
+![ICs detection results on a trial of indoor walking.](utils_/README_figures/detected_ics.png "ICs detection results on a trial of indoor walking.")
 
 3. **Gait Speed Estimation:**
    - Open `example_gait_speed_estimation.m` in Matlab and set `headgait\` as the current folder.
    - Run the script to make inference on the data segmented using the previously detected initial contacts and estimate gait speed.
-![Target and predicted gait speed for one participant.](utils_/gait_speed_line.png "Target and predicted gait speed for one participant.")
+![Target and predicted gait speed for one participant.](utils_/README_figures/gait_speed_line.png "Target and predicted gait speed for one participant.")
 
 ## Example Data
 

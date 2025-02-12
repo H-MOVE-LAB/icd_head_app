@@ -24,20 +24,19 @@ function stackedWindows = divide_into_windows(x, winSize, overlap)
 %                             with specified overlap.
 %
 % -------------------------------------------------------------------------
-
-%% Initialize cell array for efficient concatenation
-numFeatures = size(x, 2);
-bufferedWindows = cell(1, numFeatures); % Preallocate memory for performance
-
-%% Process Each Column Separately
-for featureIdx = 1:numFeatures
-    signalSegment = x(:, featureIdx); % Extract individual signal
-    bufferedData = buffer(signalSegment, winSize, overlap, 'nodelay'); % Apply buffering
-    bufferedWindows{featureIdx} = bufferedData; % Store in preallocated cell array
+%% Initialize output array
+stackedWindows = []; 
+for i=1:size(x,2) 
+    timeSerie = x(:,i); % full sequence of acceleration/gyroscope component
+    [windows,~] = buffer(timeSerie,winSize,overlap,'nodelay'); % bufferization
+    % [1-200: AP-acc;
+    % 201-400: V-acc;
+    % 401-600: ML-acc;
+    % 601-800: AP-gyr;
+    % 801-1000: V-gyr;
+    % 1001-1200: ML-gyr; 
+    % 1201-1400: target label]
+    stackedWindows = [stackedWindows;windows]; 
 end
-
-%% Convert Cell Array to Matrix
-stackedWindows = cell2mat(bufferedWindows); % Efficient concatenation
-stackedWindows = stackedWindows'; % Transpose to ensure observations in rows
-
+stackedWindows = stackedWindows'; % rows: observations, columns: samples.
 end

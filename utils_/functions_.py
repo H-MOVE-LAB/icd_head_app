@@ -2,18 +2,17 @@
 """
 Functions for initial contacts detection with a head-worn sensor.
 
-@author: Paolo Tasca
-@date: 11/01/2024
-@version: 1.0
-@mail: paolo.tasca@polito.it
-
+Author: Paolo Tasca (Politecnico di Torino)
+Date: 11/01/2024
+Version: 1.1
+Email: paolo.tasca@polito.it
 """
+
 # Import packages
 from scipy.signal import find_peaks
 from scipy.io import loadmat, matlab
 import numpy as np
 import matplotlib.pyplot as plt
-import keras
 
 # %% Load Matlab structure as dict
 def _todict(matobj):

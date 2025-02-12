@@ -1,66 +1,75 @@
 # -*- coding: utf-8 -*-
 """
+Script for processing pre-processed mobility test data and evaluating initial contact events.
 
-@author: Paolo Tasca 
-@date: 11/01/2024
-@version: 1.0
-@mail: paolo.tasca@polito.it
+Author: Paolo Tasca (Politecnico di Torino)
+Date: 11/01/2024
+Version: 1.1
+Email: paolo.tasca@polito.it
 """
-                                                                               
+
 # %% IMPORT PACKAGES
-import os
+import logging
+from pathlib import Path
 import tf_keras as k3
 from utils_.functions_ import *
 from scipy.io import savemat
-# %% DATA LOADING
-# get current directory
-subj_dir = '0002'
-# load the model
-model = k3.models.load_model('Trained initial contacts model',compile= False)
-# load data
-processed_data_path = os.path.join('example_data','preprocessed','data.mat')
-original_data_path = os.path.join('example_data','original',subj_dir,'Mobility Test','Results','data.mat')
 
-dataset = load_mat_struct(processed_data_path, dataset_name = "pre_processed_data") # load processed dataset
-raw_dataset = load_mat_struct(original_data_path, dataset_name = "data")
-# main loop
-print('Processing subject',subj_dir,'...')
-for iTest in list(dataset["TimeMeasure1"].keys()): # e.g. 'Test3'
-    for iTrial in list(dataset["TimeMeasure1"][iTest].keys()): # e.g. 'Trial1'
-        print('Processing',iTest,iTrial)
-        data = dataset["TimeMeasure1"][iTest][iTrial]["Standards"]["INDIP"]["MicroWB"]
-        if type(data) is dict:
-            mWB = data
-            # pre-processed windows during current mWB
-            x = mWB["dataset_p"]
-            # reshape dataset
+# %% SETUP LOGGING
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+# %% DATA LOADING
+SUBJECT_ID = "0002"
+DATA_DIR = Path("example_data")
+
+# Load the trained model
+MODEL_PATH = "Trained initial contacts model"
+model = k3.models.load_model(MODEL_PATH, compile=False)
+
+# Load dataset paths
+processed_data_path = DATA_DIR / "preprocessed" / "data.mat"
+original_data_path = DATA_DIR / "original" / SUBJECT_ID / "Mobility Test" / "Results" / "data.mat"
+
+# Load datasets
+dataset = load_mat_struct(processed_data_path, dataset_name="preProcessedData")
+raw_dataset = load_mat_struct(original_data_path, dataset_name="data")
+
+logging.info(f"Processing subject {SUBJECT_ID}...")
+
+# %% MAIN PROCESSING LOOP
+for test_name, test_data in dataset["TimeMeasure1"].items():  # e.g., 'Test3'
+    for trial_name, trial_data in test_data.items():  # e.g., 'Trial1'
+        logging.info(f"Processing {test_name} {trial_name}...")
+
+        micro_walking_bouts = trial_data["Standards"]["INDIP"]["MicroWB"]
+
+        if isinstance(micro_walking_bouts, dict):  # Single micro-walking bout
+            micro_walking_bouts = [micro_walking_bouts]
+
+        for i, mwb in enumerate(micro_walking_bouts):
+            # Extract pre-processed windows
+            x = mwb["dataset_p"]
+
+            # Reshape dataset
             x, t = buildDataSet(x)
-            # evaluation of extra ICs, missed ICs, time errors, predicted ICs and target ICs for each mWB
-            ExtraEvents, MissedEvents, Predicted_Initial_Contact_Events, Target_Initial_Contact_Events = modelEvaluate(model,x,t)
-            # saving into dict
-            dataset["TimeMeasure1"][iTest][iTrial]["Standards"]["INDIP"]["MicroWB"]["ExtraEvents"] = ExtraEvents
-            dataset["TimeMeasure1"][iTest][iTrial]["Standards"]["INDIP"]["MicroWB"]["MissedEvents"] = MissedEvents
-            dataset["TimeMeasure1"][iTest][iTrial]["Standards"]["INDIP"]["MicroWB"]["Predicted_Initial_Contact_Events"] = Predicted_Initial_Contact_Events
-            dataset["TimeMeasure1"][iTest][iTrial]["Standards"]["INDIP"]["MicroWB"]["Target_Initial_Contact_Events"] = Target_Initial_Contact_Events
-        else:
-            for mWBi in range(len(data)):
-                mWB = data[mWBi]
-                # processed windows during current mWB
-                x = mWB.dataset_p
-                # reshape dataset
-                x, t = buildDataSet(x)
-                # evaluation of extra ICs, missed ICs, time errors, predicted ICs and target ICs for each mWB
-                ExtraEvents, MissedEvents, Predicted_Initial_Contact_Events, Target_Initial_Contact_Events = modelEvaluate(model,x,t)
-                # saving into dict
-                dataset["TimeMeasure1"][iTest][iTrial]["Standards"]["INDIP"]["MicroWB"][mWBi].ExtraEvents = ExtraEvents
-                dataset["TimeMeasure1"][iTest][iTrial]["Standards"]["INDIP"]["MicroWB"][mWBi].MissedEvents = MissedEvents
-                dataset["TimeMeasure1"][iTest][iTrial]["Standards"]["INDIP"]["MicroWB"][mWBi].Predicted_Initial_Contact_Events = Predicted_Initial_Contact_Events
-                dataset["TimeMeasure1"][iTest][iTrial]["Standards"]["INDIP"]["MicroWB"][mWBi].Target_Initial_Contact_Events = Target_Initial_Contact_Events
-# %% VIEW predicted and target initial contacts for the mWB
+
+            # Evaluate initial contact events
+            extra_events, missed_events, predicted_IC, target_IC = modelEvaluate(model, x, t)
+
+            # Save results back into dataset
+            mwb["ExtraEvents"] = extra_events
+            mwb["MissedEvents"] = missed_events
+            mwb["Predicted_Initial_Contact_Events"] = predicted_IC
+            mwb["Target_Initial_Contact_Events"] = target_IC
+
+# %% PLOT RESULTS
 plot_first_mwb(dataset)
 
-# %% Export dataset as .mat file (Uncomment to save)
-save_path = os.path.join('TCN_outputs', subj_dir)
-os.makedirs(save_path, exist_ok=True)
-file_name = os.path.join(save_path, 'results.mat')
-savemat(file_name, dataset, long_field_names = True, oned_as='column')
+# %% EXPORT RESULTS TO .MAT FILE
+SAVE_DIR = Path("TCN_outputs") / SUBJECT_ID
+SAVE_DIR.mkdir(parents=True, exist_ok=True)
+SAVE_PATH = SAVE_DIR / "results.mat"
+
+savemat(SAVE_PATH, dataset, long_field_names=True, oned_as="column")
+
+logging.info(f"Results saved to {SAVE_PATH}")

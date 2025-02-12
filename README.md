@@ -30,22 +30,6 @@ Supervisors: Andrea Cereatti, Gabriella Balestra, Samanta Rosati, Francesca Sali
 <a id="4">[4]</a>
 R. Romijnders, F. Salis, C. Hansen, A. Küderle, A. Paraschiv-Ionescu, A. Cereatti, W. Maetzler *et al.*, *Ecological validity of a deep learning algorithm to detect gait events from real-life walking bouts in mobility-limiting diseases*, Frontiers in Neurology, 2023, [10.3389/fneur.2023.1247532. ](10.3389/fneur.2023.1247532. )
 
-## Overview
-
-The provided application is ready-to-run, requiring minimal setup. The process involves three main steps:
-
-1. **Matlab Pre-processing:**
-   - Run the `preprocessing.m` script in Matlab to perform pre-processing on example raw data.
-   - This step prepares the data for input into the Temporal Convolutional Network.
-
-2. **Initial Contacts Detection:**
-   - After pre-processing, run the Python script `example_initial_contacts_detection.py` to make the TCN infer initial contacts.
-   - The relevant Python script is provided for seamless integration with the processed data.
-
-3. **Gait Speed Estimation:**
-   - Onc detected initial contacts, run the Matlab script `example_gait_speed_estimation.m` to make the GPR model infer gait speed.
-   - The relevant Python script is provided for seamless integration with the processed data.
-
 ## Prerequisites
 
 Ensure you have the following dependencies installed before running the application:

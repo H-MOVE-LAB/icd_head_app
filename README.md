@@ -61,7 +61,7 @@ Clone the repository to your local machine :
 git clone https://github.com/H-MOVE-LAB/headgait.git
 ```
 
-Then, create a virtual environment with the required modules (example: `venv_headgait`) : 
+(Optional) We recommend creating a virtual environment with the required modules (example: `venv_headgait`) : 
 
 ```bash
 python -m venv venv_headgait
@@ -76,15 +76,20 @@ Now, everything is set for you to start and play around!
    - Run the script to perform pre-processing on the example raw data. This include filtering, scaling and windowing.
    - Verify that pre-processed data is correctly saved in location `example_data\preprocessed\data.mat`.
    
-2. **Python Inference:**
-   - Open `icd_head_app\` as a project in your IDE (suggested: PyCharm).
-   - Open the `main.py` script in a Python environment.
+2. **Initial Contacts Detection:**
+   - Open `headgait\` as a project in your IDE (suggested: PyCharm).
+   - Open the `example_initial_contacts_detection.py` script in a Python environment.
    - Run the script to make inference on the pre-processed data and measure detection performance.
 ![ICs detection results on a trial of indoor walking.](utils_/detected_ics.png "ICs detection results on a trial of indoor walking.")
 
+3. **Gait Speed Estimation:**
+   - Open `example_gait_speed_estimation.m` in Matlab and set `headgait\` as the current folder.
+   - Run the script to make inference on the data segmented using the previously detected initial contacts and estimate gait speed.
+![Target and predicted gait speed for one participant.](utils_/gait_speed_line.png "Target and predicted gait speed for one participant.")
+
 ## Example Data
 
-Example raw data is provided in the `example_data` directory. Use this data to familiarize yourself with the application's workflow and as a reference for running the pre-processing and inference scripts. The full dataset [TO-Walk](https://dx.doi.org/10.21227/z3g5-nk54) is available on IEEE DataPort.
+Example raw data is provided in the `example_data\` directory. Use this data to familiarize yourself with the application's workflow and as a reference for running the pre-processing and inference scripts. The full dataset [TO-Walk](https://dx.doi.org/10.21227/z3g5-nk54) is available on IEEE DataPort.
 
 ## Acknowledgments
 
@@ -92,13 +97,13 @@ This application was developed by the H-MOVE-LAB for human motion analysis. If y
 
 ## Citation
 ```bash
-@misc{icd_head_app,
+@misc{headgait,
   author = {Paolo Tasca},
-  title = {Initial Contacts Detection Using Temporal Convolutional Networks and a Head-Worn IMU},
-  year = {2024},
+  title = {Deep and Machine Learning Models for Initial Contacts Detection and Gait Speed Estimation with a Head-Worn Inertial Measurement Unit},
+  year = {2025},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/H-MOVE-LAB/icd_head_app}},
+  howpublished = {\url{https://github.com/H-MOVE-LAB/headgait}},
 }
 ```
 <!--## License

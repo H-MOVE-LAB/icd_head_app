@@ -67,7 +67,7 @@ February 14, 2025.
 [10.1109/TNSRE.2025.3542568](https://doi.org/10.1109/TNSRE.2025.3542568) <br><br>
 
 
-## Other works related to `HeadGait`
+## Other works featuring `HeadGait`
 
 <a id="2">[2]</a> 
 P. Tasca, F. Salis, A. Cereatti, 
@@ -89,10 +89,13 @@ P. Tasca,
 *A machine learning approach to spatio-temporal gait analysis based on a head-mounted inertial sensor*,
 Supervisors: Andrea Cereatti, Gabriella Balestra, Samanta Rosati, Francesca Salis. Politecnico di Torino, 2022
 [https://webthesis.biblio.polito.it/25348/](https://webthesis.biblio.polito.it/25348/) <br><br>
+
+## Acknowledged works
 <a id="5">[5]</a>
 R. Romijnders, F. Salis, C. Hansen, A. Küderle, A. Paraschiv-Ionescu, A. Cereatti, W. Maetzler *et al.*, *Ecological validity of a deep learning algorithm to detect gait events from real-life walking bouts in mobility-limiting diseases*, Frontiers in Neurology, 2023, [10.3389/fneur.2023.1247532. ](10.3389/fneur.2023.1247532. ) <br><br>
 <a id="6">[6]</a>
-Salis F, Bertuletti S, Bonci T, Caruso M, Scott K, Alcock L, Buckley E, *et al.*, *A multi-sensor wearable system for the assessment of diseased gait in real-world conditions.*, Frontiers in Bioengineering, 2023, [10.3389/fbioe.2023.1143248](10.3389/fbioe.2023.1143248)
+Salis F, Bertuletti S, Bonci T, Caruso M, Scott K, Alcock L, Buckley E, *et al.*, *A multi-sensor wearable system for the assessment of diseased gait in real-world conditions.*, Frontiers in Bioengineering, 2023, [10.3389/fbioe.2023.1143248](10.3389/fbioe.2023.1143248) <br><br>
+
 
 
 <!--## License

@@ -52,11 +52,9 @@ Now, everything is set for you to start and play around!
 
 Example raw data is provided in the `example_data\` directory. Use this data to familiarize yourself with the application's workflow and as a reference for running the pre-processing and inference scripts. The full dataset [TO-Walk](https://dx.doi.org/10.21227/z3g5-nk54) is available on IEEE DataPort.
 
-## Acknowledgments
-
-This application was developed by the H-MOVE-LAB for human motion analysis. If you find this tool useful, consider citing our work or providing feedback to help us improve.
 
 ## Citing `HeadGait`
+This application was developed by the H-MOVE-LAB for human motion analysis. If you find this tool useful, consider citing our work or providing feedback to help us improve.
 If you use `HeadGait` for research purposes, please report the version used in your work. Additionally, please also cite the corresponding paper:
 
 <a id="1">[1]</a> 
@@ -90,7 +88,8 @@ P. Tasca,
 Supervisors: Andrea Cereatti, Gabriella Balestra, Samanta Rosati, Francesca Salis. Politecnico di Torino, 2022
 [https://webthesis.biblio.polito.it/25348/](https://webthesis.biblio.polito.it/25348/) <br><br>
 
-## Acknowledged works
+## Acknowledged publications
+The authors of `HeadGait` wish to acknowledge the following publications:
 <a id="5">[5]</a>
 R. Romijnders, F. Salis, C. Hansen, A. Küderle, A. Paraschiv-Ionescu, A. Cereatti, W. Maetzler *et al.*, *Ecological validity of a deep learning algorithm to detect gait events from real-life walking bouts in mobility-limiting diseases*, Frontiers in Neurology, 2023, [10.3389/fneur.2023.1247532. ](10.3389/fneur.2023.1247532. ) <br><br>
 <a id="6">[6]</a>

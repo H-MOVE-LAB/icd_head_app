@@ -90,6 +90,7 @@ Supervisors: Andrea Cereatti, Gabriella Balestra, Samanta Rosati, Francesca Sali
 
 ## Acknowledged publications
 The authors of `HeadGait` wish to acknowledge the following publications:
+
 <a id="5">[5]</a>
 R. Romijnders, F. Salis, C. Hansen, A. Küderle, A. Paraschiv-Ionescu, A. Cereatti, W. Maetzler *et al.*, *Ecological validity of a deep learning algorithm to detect gait events from real-life walking bouts in mobility-limiting diseases*, Frontiers in Neurology, 2023, [10.3389/fneur.2023.1247532. ](10.3389/fneur.2023.1247532. ) <br><br>
 <a id="6">[6]</a>

@@ -7,37 +7,7 @@ The study design and the procedures for data collection, model training, optimiz
 
 This project is based on [my-gait-events-tcn](https://github.com/rmndrs89/my-gait-events-tcn.git). The code for training (not included in the current project) and evaluating the model was adapted from the referenced repository.
 
-## References
-<a id="1">[1]</a> 
-P. Tasca, F. Salis, S. Rosati, G. Balestra, A. Cereatti, 
-*Estimating Gait Speed in the Real World with a Head-Worn Inertial Sensor*,
-IEEE Transactions in Neural Systems and Rehabiliation Engineering, 
-February 14, 2025.
-[10.1109/TNSRE.2025.3542568](https://doi.org/10.1109/TNSRE.2025.3542568) <br><br>
-<a id="2">[2]</a> 
-P. Tasca, F. Salis, A. Cereatti, 
-*Real-world gait detection with a head-worn inertial unit and features-based machine learning*,
-Gait & Posture, 
-October, 2024.
-[https://doi.org/10.1016/j.gaitpost.2024.08.068](https://doi.org/10.1016/j.gaitpost.2024.08.068) <br><br>
-<a id="3">[3]</a> 
-P. Tasca, F. Salis, S. Rosati, G. Balestra, A. Cereatti,
-*A machine learning-based pipeline for stride speed estimation with a head-worn inertial sensor*,
-Gait & Posture,
-Volume 105, Supplement 1,
-2023,
-Pages S47-S48,
-ISSN 0966-6362,
-[https://doi.org/10.1016/j.gaitpost.2023.07.341.](https://doi.org/10.1016/j.gaitpost.2023.07.341.) <br><br>
-<a id="4">[4]</a> 
-P. Tasca,
-*A machine learning approach to spatio-temporal gait analysis based on a head-mounted inertial sensor*,
-Supervisors: Andrea Cereatti, Gabriella Balestra, Samanta Rosati, Francesca Salis. Politecnico di Torino, 2022
-[https://webthesis.biblio.polito.it/25348/](https://webthesis.biblio.polito.it/25348/) <br><br>
-<a id="5">[5]</a>
-R. Romijnders, F. Salis, C. Hansen, A. Küderle, A. Paraschiv-Ionescu, A. Cereatti, W. Maetzler *et al.*, *Ecological validity of a deep learning algorithm to detect gait events from real-life walking bouts in mobility-limiting diseases*, Frontiers in Neurology, 2023, [10.3389/fneur.2023.1247532. ](10.3389/fneur.2023.1247532. )
-
-## Prerequisites
+## Requirements
 
 Ensure you have the following dependencies installed before running the application:
 
@@ -86,17 +56,45 @@ Example raw data is provided in the `example_data\` directory. Use this data to 
 
 This application was developed by the H-MOVE-LAB for human motion analysis. If you find this tool useful, consider citing our work or providing feedback to help us improve.
 
-## Citation
+## Citing `HeadGait`
+If you use `HeadGait` for research purposes, please report the version used in your work. Additionally, please also cite the corresponding paper:
 ```bash
-@misc{headgait,
-  author = {Paolo Tasca},
-  title = {Deep and Machine Learning Models for Initial Contacts Detection and Gait Speed Estimation with a Head-Worn Inertial Measurement Unit},
-  year = {2025},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/H-MOVE-LAB/headgait}},
-}
+<a id="1">[1]</a> 
+P. Tasca, F. Salis, S. Rosati, G. Balestra, A. Cereatti, 
+*Estimating Gait Speed in the Real World with a Head-Worn Inertial Sensor*,
+IEEE Transactions in Neural Systems and Rehabiliation Engineering, 
+February 14, 2025.
+[10.1109/TNSRE.2025.3542568](https://doi.org/10.1109/TNSRE.2025.3542568) <br><br>
 ```
+
+## Other works related to `HeadGait`
+
+<a id="2">[2]</a> 
+P. Tasca, F. Salis, A. Cereatti, 
+*Real-world gait detection with a head-worn inertial unit and features-based machine learning*,
+Gait & Posture, 
+October, 2024.
+[https://doi.org/10.1016/j.gaitpost.2024.08.068](https://doi.org/10.1016/j.gaitpost.2024.08.068) <br><br>
+<a id="3">[3]</a> 
+P. Tasca, F. Salis, S. Rosati, G. Balestra, A. Cereatti,
+*A machine learning-based pipeline for stride speed estimation with a head-worn inertial sensor*,
+Gait & Posture,
+Volume 105, Supplement 1,
+2023,
+Pages S47-S48,
+ISSN 0966-6362,
+[https://doi.org/10.1016/j.gaitpost.2023.07.341.](https://doi.org/10.1016/j.gaitpost.2023.07.341.) <br><br>
+<a id="4">[4]</a> 
+P. Tasca,
+*A machine learning approach to spatio-temporal gait analysis based on a head-mounted inertial sensor*,
+Supervisors: Andrea Cereatti, Gabriella Balestra, Samanta Rosati, Francesca Salis. Politecnico di Torino, 2022
+[https://webthesis.biblio.polito.it/25348/](https://webthesis.biblio.polito.it/25348/) <br><br>
+<a id="5">[5]</a>
+R. Romijnders, F. Salis, C. Hansen, A. Küderle, A. Paraschiv-Ionescu, A. Cereatti, W. Maetzler *et al.*, *Ecological validity of a deep learning algorithm to detect gait events from real-life walking bouts in mobility-limiting diseases*, Frontiers in Neurology, 2023, [10.3389/fneur.2023.1247532. ](10.3389/fneur.2023.1247532. )
+<a id="6">[6]</a>
+Salis F, Bertuletti S, Bonci T, Caruso M, Scott K, Alcock L, Buckley E, *et al.*, *A multi-sensor wearable system for the assessment of diseased gait in real-world conditions.*, Frontiers in Bioengineering, 2023, [10.3389/fbioe.2023.1143248](10.3389/fbioe.2023.1143248)
+
+
 <!--## License
 
 This project is licensed under the [MIT License](LICENSE).-->

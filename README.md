@@ -60,7 +60,7 @@ This application was developed by the H-MOVE-LAB for human motion analysis. If y
 If you use `HeadGait` for research purposes, please report the version used in your work. Additionally, please also cite the corresponding paper:
 
 <a id="1">[1]</a> 
-P. Tasca, F. Salis, S. Rosati, G. Balestra, A. Cereatti, 
+P. Tasca, F. Salis, S. Rosati, G. Balestra, C. Mazzà, A. Cereatti, 
 *Estimating Gait Speed in the Real World with a Head-Worn Inertial Sensor*,
 IEEE Transactions in Neural Systems and Rehabiliation Engineering, 
 February 14, 2025.

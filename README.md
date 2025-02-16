@@ -70,14 +70,14 @@ version = {1.0.0}
 }
 ```
 Additionally, please also cite the corresponding paper:
-```
+
 <a id="1">[1]</a> 
 P. Tasca, F. Salis, S. Rosati, G. Balestra, C. Mazzà, A. Cereatti, 
 *Estimating Gait Speed in the Real World with a Head-Worn Inertial Sensor*,
 IEEE Transactions in Neural Systems and Rehabiliation Engineering, 
 February 14, 2025.
 [10.1109/TNSRE.2025.3542568](https://doi.org/10.1109/TNSRE.2025.3542568) <br><br>
-```
+
 
 ## Other works featuring `HeadGait`
 

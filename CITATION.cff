@@ -6,7 +6,6 @@ authors:
   orcid: "https://orcid.org/0009-0008-7157-3451"
 title: "HeadGait - Deep and Machine Learning Models for Initial Contacts Detection and Gait Speed Estimation with a Head-Worn Inertial Measurement Unit"
 version: 1.0.0
-date-released: 2025-02-15
 url: "https://github.com/H-MOVE-LAB/headgait"
 
 preferred-citation:

@@ -12,7 +12,7 @@ Ensure you have the following dependencies installed before running the applicat
 - **Matlab:** MATLAB R2022a or later.
 - **Python:** Python 3.12, with the required libraries listed in `requirements.txt`.
 
-## Usage (Windows)
+## Installation in Windows
 
 Clone the repository to your local machine :
 
@@ -27,6 +27,8 @@ python -m venv venv_headgait
 venv_headgait\Scripts\activate     
 pip install -r requirements.txt
 ```
+
+## Run `HeadGait` examples
 
 Now, everything is set for you to start and play around!
 

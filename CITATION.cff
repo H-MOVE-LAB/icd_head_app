@@ -9,27 +9,27 @@ version: 1.0.0
 url: "https://github.com/H-MOVE-LAB/headgait"
 
 preferred-citation:
-type: article
-authors:
-- family-names: "Tasca"
-  given-names: "Paolo"
-  orcid: "https://orcid.org/0009-0008-7157-3451"
-- family-names: "Salis"
-  given-names: "Francesca"
-  orcid: "https://orcid.org/0000-0003-1380-6014"
-- family-names: "Rosati"
-  given-names: "Samanta"
-  orcid: "https://orcid.org/0000-0003-0620-594X"
-- family-names: "Balestra"
-  given-names: "Gabriella"
-  orcid: "https://orcid.org/0000-0003-2717-648X"
-- family-names: "Mazzà"
-  given-names: "Claudia"
-  orcid: "https://orcid.org/0000-0002-7276-5382"
-- family-names: "Cereatti"
-  given-names: "Andrea"
-  orcid: "https://orcid.org/0000-0002-7276-5382"
-doi: 10.3390/s23146565
-journal: "IEEE Transactions in Neural Systems and Rehabilitation Engineering"
-title: "Estimating Gait Speed in the Real World with a Head-Worn Inertial Sensor"
-year: 2025
+  type: article
+  authors:
+  - family-names: "Tasca"
+    given-names: "Paolo"
+    orcid: "https://orcid.org/0009-0008-7157-3451"
+  - family-names: "Salis"
+    given-names: "Francesca"
+    orcid: "https://orcid.org/0000-0003-1380-6014"
+  - family-names: "Rosati"
+    given-names: "Samanta"
+    orcid: "https://orcid.org/0000-0003-0620-594X"
+  - family-names: "Balestra"
+    given-names: "Gabriella"
+    orcid: "https://orcid.org/0000-0003-2717-648X"
+  - family-names: "Mazzà"
+    given-names: "Claudia"
+    orcid: "https://orcid.org/0000-0002-7276-5382"
+  - family-names: "Cereatti"
+    given-names: "Andrea"
+    orcid: "https://orcid.org/0000-0002-7276-5382"
+  doi: 10.3390/s23146565
+  journal: "IEEE Transactions in Neural Systems and Rehabilitation Engineering"
+  title: "Estimating Gait Speed in the Real World with a Head-Worn Inertial Sensor"
+  year: 2025

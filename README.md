@@ -3,9 +3,7 @@
 
 Welcome to the `HeadGait` repository! This repository contains a basic example of a Matlab-Python application for the detection of initial contacts and the estimation of gait speed from acceleration and angular velocity data recorded by a Head-worn Inertial Measurement Unit (H-IMU). Raw data is preprocessed in Matlab, then initial contacts are detected by a Temporal Convolutional Network (TCN) trained with over 100.000 gait cyles in both structured and real-world conditions. Finally, gait speed is inferred by a trained Gaussian Process Regression (GPR) model fed with nine time-domain features extracted from the previously segmented gait cycles. 
 
-The study design and the procedures for data collection, model training, optimization and evaluation are described in <a href="#1">[1]</a>
-
-This project is based on [my-gait-events-tcn](https://github.com/rmndrs89/my-gait-events-tcn.git). The code for training (not included in the current project) and evaluating the model was adapted from the referenced repository.
+The study design and the procedures for data collection, model training, optimization and evaluation are described in <a href="#1">[1]</a>.
 
 ## Requirements
 
@@ -88,8 +86,9 @@ P. Tasca,
 Supervisors: Andrea Cereatti, Gabriella Balestra, Samanta Rosati, Francesca Salis. Politecnico di Torino, 2022
 [https://webthesis.biblio.polito.it/25348/](https://webthesis.biblio.polito.it/25348/) <br><br>
 
-## Acknowledged publications
-The authors of `HeadGait` wish to acknowledge the following publications:
+## Acknowledgements
+The code for the TCN training, optimization and evaluation is based on [my-gait-events-tcn](https://github.com/rmndrs89/my-gait-events-tcn.git) <a href="#5">[5]</a>. Ground truth data was provided by the INDIP reference system, described in <a href="#6">[6]</a>.
+
 
 <a id="5">[5]</a>
 R. Romijnders, F. Salis, C. Hansen, A. Küderle, A. Paraschiv-Ionescu, A. Cereatti, W. Maetzler *et al.*, *Ecological validity of a deep learning algorithm to detect gait events from real-life walking bouts in mobility-limiting diseases*, Frontiers in Neurology, 2023, [10.3389/fneur.2023.1247532. ](10.3389/fneur.2023.1247532. ) <br><br>

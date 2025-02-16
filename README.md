@@ -52,16 +52,32 @@ Example raw data is provided in the `example_data\` directory. Use this data to 
 
 
 ## Citing `HeadGait`
-This application was developed by the H-MOVE-LAB for human motion analysis. If you find this tool useful, consider citing our work or providing feedback to help us improve.
-If you use `HeadGait` for research purposes, please report the version used in your work. Additionally, please also cite the corresponding paper:
 
+If you are using mobgap in your research or work, we would like to ask you to mention the library in your publications.
+For papers, we recommend citing the library using the following reference:
+
+```
+Tasca, P. HeadGait - Deep and Machine Learning Models for Initial Contacts Detection and Gait Speed Estimation with a Head-Worn Inertial Measurement Unit (Version 1.0.0) [Computer software]. https://doi.org/10.3390/s23146565
+```
+
+```
+@software{Tasca_HeadGait_-_Deep,
+author = {Tasca, Paolo},
+doi = {10.3390/s23146565},
+title = {{HeadGait - Deep and Machine Learning Models for Initial Contacts Detection and Gait Speed Estimation with a Head-Worn Inertial Measurement Unit}},
+url = {https://github.com/H-MOVE-LAB/headgait},
+version = {1.0.0}
+}
+```
+Additionally, please also cite the corresponding paper:
+```
 <a id="1">[1]</a> 
 P. Tasca, F. Salis, S. Rosati, G. Balestra, C. Mazzà, A. Cereatti, 
 *Estimating Gait Speed in the Real World with a Head-Worn Inertial Sensor*,
 IEEE Transactions in Neural Systems and Rehabiliation Engineering, 
 February 14, 2025.
 [10.1109/TNSRE.2025.3542568](https://doi.org/10.1109/TNSRE.2025.3542568) <br><br>
-
+```
 
 ## Other works featuring `HeadGait`
 
